@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.tools.lint:lint-api:24.5.0'
+}
+
+//use these configurations to build lint jar
+jar {
+    manifest {
+        //将 IssueRegistry 的子类配置在这里
+        attributes 'Lint-Registry': 'com.meizu.flyme.FlymeLint'
+    }
+}
+
+configurations {
+    lintChecks
+}
+
+dependencies {
+    lintChecks files(jar)
+}

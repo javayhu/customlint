@@ -1,14 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.novoda:bintray-release:0.4.0'
-    }
-}
+group='com.github.hujiaweibujidao'
 
 android {
     compileSdkVersion 24
@@ -64,13 +57,5 @@ project.afterEvaluate{
     compileLintTask.dependsOn(copyLintJar)
 }
 
-//hujiawei upload library to bintray
-publish {
-    userOrg = 'hujiawei'
-    groupId = 'io.github.hujiaweibujidao'
-    artifactId = 'customlint'
-    publishVersion = '1.0.0'
-    desc = 'custom lint rules'
-    website = 'https://hujiaweibujidao.github.io/'
-}
+
 

@@ -13,9 +13,9 @@ public class FlymeLint extends IssueRegistry {
 
     @Override
     public synchronized List<Issue> getIssues() {
-        System.out.println("==== Flyme lint start ====");
+        System.out.println("==== custom lint start ====");
         return Arrays.asList(
-                LogDetector.ISSUE
+                LogDetector.LOGUSAGEERROR
         );
     }
 }
